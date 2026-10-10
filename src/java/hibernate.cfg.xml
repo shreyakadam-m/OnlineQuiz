@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Derby Driver -->
+        <property name="hibernate.connection.driver_class">
+            org.apache.derby.jdbc.ClientDriver
+        </property>
+
+        <!-- Online Quiz Database -->
+        <property name="hibernate.connection.url">
+            jdbc:derby://localhost:1527/onlinequiz;create=true
+        </property>
+
+        <property name="hibernate.connection.username">
+            app
+        </property>
+
+        <property name="hibernate.connection.password">
+            app
+        </property>
+
+        <!-- Hibernate Dialect -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.DerbyDialect
+        </property>
+
+        <!-- Automatically create/update tables -->
+        <property name="hibernate.hbm2ddl.auto">
+            update
+        </property>
+
+        <property name="hibernate.show_sql">
+            false
+        </property>
+
+        <property name="hibernate.format_sql">
+            true
+        </property>
+
+        <!-- Entities -->
+
+        <mapping class="model.Admin"/>
+
+        <mapping class="model.Student"/>
+
+        <mapping class="model.Quiz"/>
+
+        <mapping class="model.Question"/>
+
+        <mapping class="model.Result"/>
+
+    </session-factory>
+
+</hibernate-configuration>
